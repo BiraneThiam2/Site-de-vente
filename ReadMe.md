@@ -73,13 +73,9 @@ mata-luxury/
 ├── script.js          # Fonctionnalités JS
 └── README.md          # Documentation
 
+
 ---
 ## 👨‍💻 **Auteur
 
 El Hadji Birane Cisse Thiam
 Email : djeumbemalick@gmail.com
-
----
-##📄 **License
-Ce projet est libre à usage personnel et éducatif.
-Toute utilisation commerciale nécessite l’autorisation de l’auteur.
