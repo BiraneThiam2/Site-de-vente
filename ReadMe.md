@@ -64,3 +64,22 @@ Le site est conçu avec **HTML, CSS et JavaScript pur**, offrant un **design mod
 1. **Cloner le dépôt :**
    ```bash
    git clone https://github.com/votre-utilisateur/mata-luxury.git
+
+---
+## 📂 **Structure du Projet
+mata-luxury/
+├── index.html         # Page principale
+├── style.css          # Styles CSS
+├── script.js          # Fonctionnalités JS
+└── README.md          # Documentation
+
+---
+## 👨‍💻 **Auteur
+
+El Hadji Birane Cisse Thiam
+Email : djeumbemalick@gmail.com
+
+---
+##📄 **License
+Ce projet est libre à usage personnel et éducatif.
+Toute utilisation commerciale nécessite l’autorisation de l’auteur.
