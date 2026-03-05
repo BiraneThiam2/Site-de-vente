@@ -1,239 +1,459 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mata Luxury - Parfums de Luxe</title>
+    <title>Mata Luxury — Parfums de Prestige</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+
+    <!-- ══════════════════════════ HEADER ══════════════════════════ -->
+    <header id="mainHeader">
         <nav>
-            <div class="logo">
+            <a href="#accueil" class="logo">
                 <div class="logo-icon">💎</div>
-                MATA LUXURY
-            </div>
+                <span>MATA LUXURY</span>
+            </a>
+
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#parfums">Parfums</a></li>
                 <li><a href="#apropos">À Propos</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="javascript:void(0)" class="cart-btn" onclick="openCartModal()">
-                    🛒 <span class="cart-count" id="cartCount">0</span>
-                </a></li>
-                <li><a href="javascript:void(0)" class="login-btn" onclick="openLoginModal()">Connexion</a></li>
+                <li>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="openCartModal()" aria-label="Panier">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="login-btn" onclick="openLoginModal()">Connexion</a>
+                </li>
             </ul>
+
+            <!-- Toggle Dark / Light -->
+            <button class="theme-toggle" id="themeToggle" title="Changer le thème" aria-label="Changer le thème">
+                <span class="icon-moon">🌙</span>
+                <span class="icon-sun">☀️</span>
+            </button>
         </nav>
     </header>
 
+    <!-- ══════════════════════════ HERO ══════════════════════════ -->
     <section id="accueil" class="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-grid-lines"></div>
+
         <div class="hero-content">
-            <div class="hero-logo">💎</div>
-            <h1>MATA LUXURY</h1>
-            <p>Découvrez notre collection exclusive de parfums de luxe</p><br>
-            <p>Bienvenue chez MATA Luxury, la référence du parfum haut de gamme.
-               Découvrez une collection exclusive où le luxe rencontre l’élégance, pensée pour sublimer votre personnalité.
-               Chaque parfum est une invitation au voyage des sens, alliant qualité, authenticité et raffinement.</p><br>
-            <p>💫 MATA Luxury — plus qu’un parfum, une signature.</p>
+            <p class="hero-eyebrow">Collection Exclusive 2025</p>
+            <div class="hero-logo-wrap">
+                <div class="hero-logo">💎</div>
+                <div class="hero-logo-ring"></div>
+            </div>
+            <h1>MATA<br><em>LUXURY</em></h1>
+            <p class="hero-subtitle">L'art du parfum, la signature du prestige.<br>Découvrez une collection où chaque flacon raconte une histoire d'exception.</p>
+            <div class="hero-actions">
+                <a href="#parfums" class="hero-cta primary">Découvrir la collection</a>
+                <a href="#apropos" class="hero-cta secondary">Notre histoire</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">9+</span>
+                    <span class="stat-label">Fragrances</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Authentique</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">Livraison</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Défiler</span>
         </div>
     </section>
 
-    <div class="container">
-        <h2 id="parfums">Nos Parfums de Prestige</h2>
-        <div class="products">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Dior Sauvage" class="product-image">
-                <h3>Dior Sauvage</h3>
-                <p>Parfum masculin puissant et frais</p>
-                <div class="price">45 000 FCFA</div>
-                <button class="btn" onclick="addToCart('Dior Sauvage', 45000)">🛒 Ajouter</button>
+    <!-- ══════════════════════════ PRODUITS ══════════════════════════ -->
+    <section id="parfums" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Notre Sélection</p>
+                <h2>Parfums de <span>Prestige</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Des fragrances iconiques, soigneusement sélectionnées pour les esprits raffinés</p>
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400" alt="Invictus" class="product-image">
-                <h3>Paco Rabanne Invictus</h3>
-                <p>Frais et sportif</p>
-                <div class="price">42 000 FCFA</div>
-                <button class="btn" onclick="addToCart('Paco Rabanne Invictus', 42000)">🛒 Ajouter</button>
-            </div>
+            <div class="products">
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Bleu de Chanel" class="product-image">
-                <h3>Bleu de Chanel</h3>
-                <p>Élégance masculine</p>
-                <div class="price">48 000 FCFA</div>
-                <button class="btn" onclick="addToCart('Bleu de Chanel', 48000)">🛒 Ajouter</button>
-            </div>
+                <div class="product-card" style="--delay: 0s">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Dior Sauvage" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('Dior Sauvage', 45000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Dior</div>
+                        <h3>Sauvage</h3>
+                        <p>Parfum masculin puissant et frais aux notes boisées</p>
+                        <div class="product-footer">
+                            <div class="price">45 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('Dior Sauvage', 45000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="Dior J'adore" class="product-image">
-                <h3>Dior J'adore</h3>
-                <p>Notes florales sophistiquées</p>
-                <div class="price">50 000 FCFA</div>
-                <button class="btn" onclick="addToCart('Dior J\'adore', 50000)">🛒 Ajouter</button>
-            </div>
+                <div class="product-card" style="--delay: 0.08s">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400" alt="Invictus" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('Paco Rabanne Invictus', 42000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Paco Rabanne</div>
+                        <h3>Invictus</h3>
+                        <p>Frais, sportif et irrésistiblement séduisant</p>
+                        <div class="product-footer">
+                            <div class="price">42 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('Paco Rabanne Invictus', 42000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="product-card">
-                <img src="black-opium___170609.webp" alt="Black Opium" class="product-image">
-                <h3>YSL Black Opium</h3>
-                <p>Séduction intense</p>
-                <div class="price">46 000 FCFA</div>
-                <button class="btn" onclick="addToCart('YSL Black Opium', 46000)">🛒 Ajouter</button>
-            </div>
+                <div class="product-card" style="--delay: 0.16s">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Bleu de Chanel" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('Bleu de Chanel', 48000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Chanel</div>
+                        <h3>Bleu de Chanel</h3>
+                        <p>L'élégance masculine à son sommet</p>
+                        <div class="product-footer">
+                            <div class="price">48 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('Bleu de Chanel', 48000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="product-card">
-                <img src="chanel NO5.jpg" alt="Chanel N°5" class="product-image">
-                <h3>Chanel N°5</h3>
-                <p>Le parfum mythique</p>
-                <div class="price">55 000 FCFA</div>
-                <button class="btn" onclick="addToCart('Chanel N°5', 55000)">🛒 Ajouter</button>
-            </div>
+                <div class="product-card" style="--delay: 0.24s">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="Dior J'adore" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('Dior J\'adore', 50000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Dior</div>
+                        <h3>J'adore</h3>
+                        <p>Notes florales sophistiquées et sensuelles</p>
+                        <div class="product-footer">
+                            <div class="price">50 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('Dior J\'adore', 50000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="product-card">
-                <img src="tom-ford-black-orchid-eau-de-parfum-pour-femme-30ml-dakar-universcosmetix.jpg" alt="Tom Ford" class="product-image">
-                <h3>Tom Ford Black Orchid</h3>
-                <p>Luxe absolu</p>
-                <div class="price">65 000 FCFA</div>
-                <button class="btn" onclick="addToCart('Tom Ford Black Orchid', 65000)">🛒 Ajouter</button>
-            </div>
+                <div class="product-card featured" style="--delay: 0.32s">
+                    <div class="product-badge">⭐ Coup de cœur</div>
+                    <div class="product-image-wrap">
+                        <img src="black-opium___170609.webp" alt="Black Opium" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('YSL Black Opium', 46000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Yves Saint Laurent</div>
+                        <h3>Black Opium</h3>
+                        <p>Séduction intense aux notes vanillées et café</p>
+                        <div class="product-footer">
+                            <div class="price">46 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('YSL Black Opium', 46000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400" alt="Versace Eros" class="product-image">
-                <h3>Versace Eros</h3>
-                <p>Passion et désir</p>
-                <div class="price">43 000 FCFA</div>
-                <button class="btn" onclick="addToCart('Versace Eros', 43000)">🛒 Ajouter</button>
-            </div>
+                <div class="product-card" style="--delay: 0.40s">
+                    <div class="product-image-wrap">
+                        <img src="chanel NO5.jpg" alt="Chanel N°5" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('Chanel N°5', 55000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Chanel</div>
+                        <h3>N°5</h3>
+                        <p>Le parfum mythique, icône intemporelle</p>
+                        <div class="product-footer">
+                            <div class="price">55 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('Chanel N°5', 55000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=400" alt="Gucci Bloom" class="product-image">
-                <h3>Gucci Bloom</h3>
-                <p>Jardin fleuri</p>
-                <div class="price">47 000 FCFA</div>
-                <button class="btn" onclick="addToCart('Gucci Bloom', 47000)">🛒 Ajouter</button>
+                <div class="product-card premium" style="--delay: 0.48s">
+                    <div class="product-badge gold">✦ Premium</div>
+                    <div class="product-image-wrap">
+                        <img src="tom-ford-black-orchid-eau-de-parfum-pour-femme-30ml-dakar-universcosmetix.jpg" alt="Tom Ford" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('Tom Ford Black Orchid', 65000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Tom Ford</div>
+                        <h3>Black Orchid</h3>
+                        <p>Luxe absolu, une fragrance d'exception rare</p>
+                        <div class="product-footer">
+                            <div class="price">65 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('Tom Ford Black Orchid', 65000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" style="--delay: 0.56s">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400" alt="Versace Eros" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('Versace Eros', 43000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Versace</div>
+                        <h3>Eros</h3>
+                        <p>Passion, désir et audace masculine</p>
+                        <div class="product-footer">
+                            <div class="price">43 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('Versace Eros', 43000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" style="--delay: 0.64s">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=400" alt="Gucci Bloom" class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-add-btn" onclick="addToCart('Gucci Bloom', 47000)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Gucci</div>
+                        <h3>Bloom</h3>
+                        <p>Jardin fleuri, féminité épanouie</p>
+                        <div class="product-footer">
+                            <div class="price">47 000 <small>FCFA</small></div>
+                            <button class="btn" onclick="addToCart('Gucci Bloom', 47000)"><span>🛒 Ajouter</span></button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- ══════════════════════════ À PROPOS ══════════════════════════ -->
     <section id="apropos" class="about">
-        <div class="about-content">
-            <h2>À Propos de Mata Luxury</h2>
-            <p>Mata Luxury est votre destination privilégiée pour les parfums de luxe authentiques. Chaque parfum est 100% authentique.
-            Bienvenue dans l’univers raffiné de MATA Luxury, une marque née de la passion pour l’art du parfum et du désir d’offrir à chacun une touche de prestige au quotidien.</p><br>
-
-<p>Chez MATA Luxury, nous croyons que le parfum n’est pas seulement un accessoire, mais une signature personnelle, une émotion, un souvenir qui marque chaque instant de la vie.
-C’est pourquoi nous sélectionnons avec soin des fragrances authentiques, inspirées des plus grandes maisons et élaborées avec des ingrédients d’exception.</p><br>
-
-<p>✨ Notre mission : offrir des parfums de qualité supérieure à des prix accessibles, tout en garantissant une expérience client unique.
-🌸 Notre vision : devenir la référence du parfum de luxe en ligne en Afrique et au-delà.
-💼 Nos valeurs : élégance, confiance, authenticité et excellence.</p><br>
-
-<p>Parce que chaque client est unique, MATA Luxury s’engage à vous accompagner dans le choix du parfum qui révélera votre personnalité.</p><br>
-
-<p>MATA Luxury — l’essence du luxe, au service de votre élégance.</p>
+        <div class="about-deco-text">LUXURY</div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="about-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=600&h=700&fit=crop" alt="Mata Luxury" />
+                        <div class="about-img-frame"></div>
+                    </div>
+                    <div class="about-badge">
+                        <span class="badge-number">100%</span>
+                        <span class="badge-text">Authentique</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="section-eyebrow">Notre Histoire</p>
+                    <h2>À Propos de<br><span>Mata Luxury</span></h2>
+                    <div class="section-divider" style="margin: 20px 0;"></div>
+                    <p>Bienvenue dans l'univers raffiné de MATA Luxury, une marque née de la passion pour l'art du parfum et du désir d'offrir à chacun une touche de prestige au quotidien.</p>
+                    <p>Chez MATA Luxury, nous croyons que le parfum n'est pas seulement un accessoire, mais une signature personnelle, une émotion, un souvenir qui marque chaque instant de la vie.</p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <span class="value-icon">✨</span>
+                            <div>
+                                <strong>Notre Mission</strong>
+                                <p>Offrir des parfums de qualité supérieure à des prix accessibles</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-icon">🌸</span>
+                            <div>
+                                <strong>Notre Vision</strong>
+                                <p>Devenir la référence du parfum de luxe en Afrique et au-delà</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-icon">💼</span>
+                            <div>
+                                <strong>Nos Valeurs</strong>
+                                <p>Élégance, confiance, authenticité et excellence</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#parfums" class="hero-cta primary" style="display:inline-flex; margin-top: 12px;">Voir les parfums</a>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- ══════════════════════════ CONTACT ══════════════════════════ -->
     <section id="contact" class="contact">
-        <h2>Contactez-Nous</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <div class="contact-icon">💬</div>
-                <h3>WhatsApp</h3>
-                <p>Discussion instantanée</p>
-                <p style="margin-top: 15px;"><a href="https://wa.me/221781537817">+221 78 153 78 17</a></p>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Nous Joindre</p>
+                <h2>Contactez-<span>Nous</span></h2>
+                <div class="section-divider"></div>
             </div>
-            <div class="contact-item">
-                <div class="contact-icon">📧</div>
-                <h3>Email</h3>
-                <p>Réponse sous 24h</p>
-                <p style="margin-top: 15px;"><a href="mailto:kaderthiam389@gmail.com">kaderthiam389.com</a></p>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <h3>Boutique</h3>
-                <p>Venez nous visiter</p>
-                <p style="margin-top: 15px;">Dakar, Sénégal</p>
-            </div>
-        </div>
 
-        <div class="contact-form-section">
-            <h3>Envoyez-nous un message</h3>
-            <form onsubmit="sendContactEmail(event)">
-                <div class="contact-form-group">
-                    <label>Nom complet *</label>
-                    <input type="text" id="contactName" required>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Discussion instantanée</p>
+                    <a href="https://wa.me/221781537817" class="contact-link">+221 78 153 78 17</a>
                 </div>
-                <div class="contact-form-group">
-                    <label>Email *</label>
-                    <input type="email" id="contactEmail" required>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Réponse sous 24h</p>
+                    <a href="mailto:kaderthiam389@gmail.com" class="contact-link">kaderthiam389@gmail.com</a>
                 </div>
-                <div class="contact-form-group">
-                    <label>Téléphone</label>
-                    <input type="tel" id="contactPhone">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Boutique</h3>
+                    <p>Venez nous visiter</p>
+                    <span class="contact-link">Dakar, Sénégal</span>
                 </div>
-                <div class="contact-form-group">
-                    <label>Sujet *</label>
-                    <input type="text" id="contactSubject" required>
-                </div>
-                <div class="contact-form-group">
-                    <label>Message *</label>
-                    <textarea id="contactMessage" required></textarea>
-                </div>
-                <button type="submit" class="send-btn">📤 Envoyer</button>
-            </form>
+            </div>
+
+            <div class="contact-form-section">
+                <h3>Envoyez-nous un message</h3>
+                <form onsubmit="sendContactEmail(event)">
+                    <div class="form-row">
+                        <div class="contact-form-group">
+                            <label>Nom complet *</label>
+                            <input type="text" id="contactName" placeholder="Votre nom" required>
+                        </div>
+                        <div class="contact-form-group">
+                            <label>Email *</label>
+                            <input type="email" id="contactEmail" placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="contact-form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" id="contactPhone" placeholder="+221 XX XXX XX XX">
+                        </div>
+                        <div class="contact-form-group">
+                            <label>Sujet *</label>
+                            <input type="text" id="contactSubject" placeholder="Objet de votre message" required>
+                        </div>
+                    </div>
+                    <div class="contact-form-group">
+                        <label>Message *</label>
+                        <textarea id="contactMessage" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="send-btn">
+                        <span>Envoyer le message</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
+    <!-- ══════════════════════════ FOOTER ══════════════════════════ -->
     <footer>
-        <p>&copy; 2025 Mata Luxury. Tous droits réservés.</p>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-icon">💎</span>
+                <span>MATA LUXURY</span>
+            </div>
+            <p class="footer-tagline">L'essence du luxe, au service de votre élégance.</p>
+            <div class="footer-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#parfums">Parfums</a>
+                <a href="#apropos">À Propos</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2025 <strong>Mata Luxury</strong>. Tous droits réservés.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/221781537817?text=Bonjour%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20parfums%20chez%20MATA%20Luxury." class="whatsapp-float" target="_blank">💬</a>
+    <!-- ══════════════════════════ WHATSAPP FLOAT ══════════════════════════ -->
+    <a href="https://wa.me/221781537817?text=Bonjour%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20parfums%20chez%20MATA%20Luxury." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <span>💬</span>
+    </a>
 
-    <!-- Modal Connexion -->
+    <!-- ══════════════════════════ MODAL CONNEXION ══════════════════════════ -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <button class="modal-close" onclick="closeLoginModal()" aria-label="Fermer">&times;</button>
+
             <div id="loginForm">
-                <h2>Connexion</h2>
+                <div class="modal-header">
+                    <div class="modal-icon">💎</div>
+                    <h2>Connexion</h2>
+                    <p>Accédez à votre espace personnel</p>
+                </div>
                 <form onsubmit="handleLogin(event)">
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" id="loginEmail" required>
+                        <input type="email" id="loginEmail" placeholder="votre@email.com" required>
                     </div>
                     <div class="form-group">
                         <label>Mot de passe</label>
-                        <input type="password" id="loginPassword" required>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
                     </div>
                     <button type="submit" class="submit-btn">Se connecter</button>
                 </form>
                 <div class="toggle-form">
-                    Pas de compte ? <a onclick="showRegister()">S'inscrire</a>
+                    Pas encore de compte ? <a onclick="showRegister()">S'inscrire gratuitement</a>
                 </div>
             </div>
 
             <div id="registerForm" style="display: none;">
-                <h2>Inscription</h2>
+                <div class="modal-header">
+                    <div class="modal-icon">✨</div>
+                    <h2>Inscription</h2>
+                    <p>Rejoignez la communauté Mata Luxury</p>
+                </div>
                 <form onsubmit="handleRegister(event)">
                     <div class="form-group">
                         <label>Nom complet</label>
-                        <input type="text" id="registerName" required>
+                        <input type="text" id="registerName" placeholder="Prénom Nom" required>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" id="registerEmail" required>
+                        <input type="email" id="registerEmail" placeholder="votre@email.com" required>
                     </div>
                     <div class="form-group">
                         <label>Téléphone</label>
-                        <input type="tel" id="registerPhone" required>
+                        <input type="tel" id="registerPhone" placeholder="+221 XX XXX XX XX" required>
                     </div>
                     <div class="form-group">
                         <label>Mot de passe</label>
-                        <input type="password" id="registerPassword" required>
+                        <input type="password" id="registerPassword" placeholder="Minimum 6 caractères" required>
                     </div>
-                    <button type="submit" class="submit-btn">S'inscrire</button>
+                    <button type="submit" class="submit-btn">Créer mon compte</button>
                 </form>
                 <div class="toggle-form">
                     Déjà un compte ? <a onclick="showLogin()">Se connecter</a>
@@ -242,80 +462,104 @@ C’est pourquoi nous sélectionnons avec soin des fragrances authentiques, insp
         </div>
     </div>
 
-    <!-- Modal Panier -->
+    <!-- ══════════════════════════ MODAL PANIER ══════════════════════════ -->
     <div id="cartModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeCartModal()">&times;</span>
-            <h2>🛒 Mon Panier</h2>
-            
+        <div class="modal-content modal-cart">
+            <button class="modal-close" onclick="closeCartModal()" aria-label="Fermer">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon">🛒</div>
+                <h2>Mon Panier</h2>
+                <p>Vos fragrances sélectionnées</p>
+            </div>
+
             <div id="cartContent"></div>
-            
+
             <div id="checkoutSection" style="display: none;">
-                <h3 style="color: #d4af37; margin-top: 30px;">Informations de livraison</h3>
-                
+                <div class="checkout-divider">
+                    <span>Informations de livraison</span>
+                </div>
+
                 <form onsubmit="confirmOrder(event)">
-                    <div class="form-group">
-                        <label>Nom complet *</label>
-                        <input type="text" id="customerName" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Téléphone *</label>
-                        <input type="tel" id="customerPhone" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Adresse de livraison *</label>
-                        <input type="text" id="customerAddress" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Ville *</label>
-                        <input type="text" id="customerCity" required>
-                    </div>
-                    
-                    <div class="delivery-options">
-                        <label style="color: #d4af37; display: block; margin-bottom: 15px;">Mode de livraison *</label>
-                        <div class="delivery-option" onclick="selectDelivery('dakar', 2000)">
-                            <input type="radio" name="delivery" value="dakar" required>
-                            <strong style="color: #d4af37;">Livraison Dakar</strong>
-                            <p style="color: #ccc; margin: 5px 0 0 28px;">2 000 FCFA - Livraison en 24-48h</p>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nom complet *</label>
+                            <input type="text" id="customerName" placeholder="Prénom Nom" required>
                         </div>
-                        <div class="delivery-option" onclick="selectDelivery('banlieue', 3000)">
-                            <input type="radio" name="delivery" value="banlieue" required>
-                            <strong style="color: #d4af37;">Livraison Banlieue</strong>
-                            <p style="color: #ccc; margin: 5px 0 0 28px;">3 000 FCFA - Livraison en 2-3 jours</p>
+                        <div class="form-group">
+                            <label>Téléphone *</label>
+                            <input type="tel" id="customerPhone" placeholder="+221 XX XXX XX XX" required>
                         </div>
-                        <div class="delivery-option" onclick="selectDelivery('regions', 5000)">
-                            <input type="radio" name="delivery" value="regions" required>
-                            <strong style="color: #d4af37;">Livraison Régions</strong>
-                            <p style="color: #ccc; margin: 5px 0 0 28px;">5 000 FCFA - Livraison en 3-5 jours</p>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Adresse *</label>
+                            <input type="text" id="customerAddress" placeholder="Votre adresse" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ville *</label>
+                            <input type="text" id="customerCity" placeholder="Dakar..." required>
                         </div>
                     </div>
 
-                    <div class="delivery-options" style="margin-top: 30px;">
-                        <label style="color: #d4af37; display: block; margin-bottom: 15px;">Mode de paiement *</label>
+                    <div class="delivery-options">
+                        <label class="options-title">Mode de livraison *</label>
+                        <div class="delivery-option" onclick="selectDelivery('dakar', 2000)">
+                            <input type="radio" name="delivery" value="dakar" required>
+                            <div class="option-content">
+                                <strong>🏙️ Livraison Dakar</strong>
+                                <p>2 000 FCFA — 24 à 48h</p>
+                            </div>
+                        </div>
+                        <div class="delivery-option" onclick="selectDelivery('banlieue', 3000)">
+                            <input type="radio" name="delivery" value="banlieue">
+                            <div class="option-content">
+                                <strong>🏘️ Livraison Banlieue</strong>
+                                <p>3 000 FCFA — 2 à 3 jours</p>
+                            </div>
+                        </div>
+                        <div class="delivery-option" onclick="selectDelivery('regions', 5000)">
+                            <input type="radio" name="delivery" value="regions">
+                            <div class="option-content">
+                                <strong>🗺️ Livraison Régions</strong>
+                                <p>5 000 FCFA — 3 à 5 jours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-options" style="margin-top: 24px;">
+                        <label class="options-title">Mode de paiement *</label>
                         <div class="delivery-option" onclick="selectPayment('wave')">
                             <input type="radio" name="payment" value="wave" required>
-                            <strong style="color: #d4af37;">💙 Wave</strong>
-                            <p style="color: #ccc; margin: 5px 0 0 28px;">Paiement via Wave Sénégal</p>
+                            <div class="option-content">
+                                <strong>💙 Wave</strong>
+                                <p>Paiement via Wave Sénégal</p>
+                            </div>
                         </div>
                         <div class="delivery-option" onclick="selectPayment('om')">
-                            <input type="radio" name="payment" value="om" required>
-                            <strong style="color: #d4af37;">🟠 Orange Money</strong>
-                            <p style="color: #ccc; margin: 5px 0 0 28px;">Paiement via Orange Money</p>
+                            <input type="radio" name="payment" value="om">
+                            <div class="option-content">
+                                <strong>🟠 Orange Money</strong>
+                                <p>Paiement via Orange Money</p>
+                            </div>
                         </div>
                         <div class="delivery-option" onclick="selectPayment('card')">
-                            <input type="radio" name="payment" value="card" required>
-                            <strong style="color: #d4af37;">💳 Carte Bancaire</strong>
-                            <p style="color: #ccc; margin: 5px 0 0 28px;">Visa, Mastercard acceptées</p>
+                            <input type="radio" name="payment" value="card">
+                            <div class="option-content">
+                                <strong>💳 Carte Bancaire</strong>
+                                <p>Visa, Mastercard acceptées</p>
+                            </div>
                         </div>
                         <div class="delivery-option" onclick="selectPayment('cash')">
-                            <input type="radio" name="payment" value="cash" required>
-                            <strong style="color: #d4af37;">💵 Paiement à la livraison</strong>
-                            <p style="color: #ccc; margin: 5px 0 0 28px;">Espèces à la réception</p>
+                            <input type="radio" name="payment" value="cash">
+                            <div class="option-content">
+                                <strong>💵 Paiement à la livraison</strong>
+                                <p>Espèces à la réception</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="order-summary">
-                        <h3 style="color: #d4af37; margin-bottom: 15px;">Récapitulatif</h3>
+                        <h3>Récapitulatif</h3>
                         <div class="summary-row">
                             <span>Sous-total</span>
                             <span id="summarySubtotal">0 FCFA</span>
@@ -330,13 +574,18 @@ C’est pourquoi nous sélectionnons avec soin des fragrances authentiques, insp
                         </div>
                     </div>
 
-                    <button type="submit" class="submit-btn">✅ Confirmer la commande</button>
+                    <button type="submit" class="submit-btn">
+                        ✅ Confirmer la commande via WhatsApp
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
 </html>
